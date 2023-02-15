@@ -1,14 +1,14 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-
+import { PublicFeed } from './pages/PublicFeed';
 import {Header} from "./components/Header"
 import { LoginUser } from './pages/LoginUser';
 import { RegisterUser } from './pages/RegisterUser';
-import { PublicFeed } from './pages/PublicFeed';
 import { UploadPost } from './pages/UploadPost';
 import { UserProfile } from './pages/UserProfile';
 import { FilterResults } from './pages/FilterResults';
 import {NotFound} from "./pages/NotFound"
+import { ControlPanel } from './components/ControlPanel';
 
 function App() {
   return (
@@ -20,9 +20,10 @@ function App() {
         <Route path="/login" element={<LoginUser />} />
         <Route path="/posts" element={<UploadPost />} />
         <Route path="/users/:id" element={<UserProfile />} />
-        <Route path="/posts?description=a" element={<FilterResults />} />
+        <Route path="/posts?description=" element={<FilterResults />} />
         <Route path="*" element={<NotFound />} />
-      </Routes>
+     </Routes>
+     <ControlPanel />
     </div>
   );
 }
