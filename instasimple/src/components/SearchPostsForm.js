@@ -2,6 +2,9 @@
 import PropTypes from 'prop-types'
 
 export const SearchPostsForm = ({ initialValue, onSearch }) => {
+
+    
+    
     return <form onSubmit={e => {
         e.preventDefault()
         onSearch?.({ value: e.target.searcher[0].value })
