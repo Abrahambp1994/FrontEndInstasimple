@@ -1,4 +1,143 @@
-.App {
-  text-align: center;
+html {
+  --light-background: #f1f1f1;
+  --dark-border: black;
+  --dark-text: black;
 }
 
+/* APLICACIÓN PRINCIPAL */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--dark-text);
+  background-color: var(--light-background);
+  font-size: 1rem;
+  width: 50vw;
+}
+
+@media (max-width: 800px) {
+  .App {
+    width: 100vw;
+  }
+}
+
+/* HEADER */
+
+Header {
+  background-color: var(--light-background);
+  border-bottom: solid thin var(--dark-border);
+  display: flex;
+  flex-direction: row;
+  font-size: inherit;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  min-height: 8vh;
+  position: fixed;
+  width: inherit;
+}
+
+  header > a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+/* PAGE: PUBLIC FEED */
+  
+.public-feed {
+  margin-top:8vh;
+  margin-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* COMPONENT: POST LIST */
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+}
+
+.post-list li {
+  width: 100%;
+  border-bottom: solid thin var(--dark-border);
+  list-style-type: none;
+}
+
+/* COMPONENT: POST */
+
+.post {
+  width: inherit;
+  padding: 0.5rem 0;
+}
+
+.post > img {
+  max-width: 100%;
+  margin: 0.5rem 0;
+}
+
+/* PAGE: FILTER RESULTS */
+  
+.filter-results {
+    margin-top:8vh;
+    margin-bottom: 8vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* PAGE: USER PROFILE */
+
+.user-profile{
+  margin-top:8vh;
+  margin-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* PAGE: LOGIN USER */
+
+.login-user{
+  margin-top:8vh;
+  margin-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* FOOTER */
+
+.footer {
+  position: fixed;
+  width: inherit;
+  bottom: 0;
+  background-color: var(--light-background);
+  border-top: solid thin var(--dark-border);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: 8vh;
+  align-items: center;
+}
+
+  .footer > a {
+    text-decoration: none;
+    color: inherit;
+  }

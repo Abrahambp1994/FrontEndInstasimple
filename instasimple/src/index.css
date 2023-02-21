@@ -11,9 +11,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  align-items: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+div#root {
+  border-left: solid thin black;
+  border-right: solid thin black;
 }
