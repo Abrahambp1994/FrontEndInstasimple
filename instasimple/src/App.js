@@ -1,31 +1,29 @@
-import './App.css'
-
+import './App.css';
 import { Routes, Route } from "react-router-dom";
-
-import { Header } from "./components/Header/Header";
-
-import { PublicFeed } from './pages/PublicFeed/PublicFeed';
-import { FilterResults } from './pages/FilterResults/FilterResults';
-import { UserProfile } from './pages/UserProfile/UserProfile';
-import { LoginPage } from './pages/LoginPage/LoginPage';
-
-import { Footer } from './components/Footer/Footer';
+import { PublicFeed } from './pages/PublicFeed';
+import {Header} from "./components/Header"
+import { LoginUser } from './pages/LoginUser';
+import { RegisterUser } from './pages/RegisterUser';
+import { UploadPost } from './pages/UploadPost';
+import { UserProfile } from './pages/UserProfile';
+import { FilterResults } from './pages/FilterResults';
+import {NotFound} from "./pages/NotFound"
+import { ControlPanel } from './components/ControlPanel';
 
 function App() {
   return (
     <div className="App">
-
       <Header />
-
-        <Routes>
-          <Route path="/" element={ <PublicFeed /> } />
-          <Route path="/posts" element={ <FilterResults /> } />
-          <Route path="/users/:id" element={<UserProfile />} />
-          <Route path="/login" element={<LoginPage />} />
-        </Routes>
-
-     <Footer />
-
+      <Routes>
+        <Route path="/" element={<PublicFeed />} />
+        <Route path="/register" element={<RegisterUser />} />
+        <Route path="/login" element={<LoginUser />} />
+        <Route path="/posts" element={<UploadPost />} />
+        <Route path="/users/:id" element={<UserProfile />} />
+        <Route path="/posts?description=" element={<FilterResults />} />
+        <Route path="*" element={<NotFound />} />
+     </Routes>
+     <ControlPanel />
     </div>
   );
 }
