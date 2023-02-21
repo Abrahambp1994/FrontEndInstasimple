@@ -1,0 +1,15 @@
+.filter-results-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-results-header h2 {
+    margin: 0 0.5rem;
+}
+
+.filter-results-header .filter-posts-form {
+    flex-grow: 1;
+    margin-right: 0.5rem;
+}

@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
-import { getAllPostsService } from "../services/index";
+import { getAllPostsService, getPostsByDescriptionService } from "../services/index";
 
-const usePosts = () => {
+const usePosts = (searchResults) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const loadPosts = async () => {
       
-        const data = await getAllPostsService()
+        const data = searchResults
+        ? await getPostsByDescriptionService(searchResults)
+        : await getAllPostsService();
 
         setPosts(data);
     }
 
     loadPosts();
-  }, []);
+  }, [searchResults]);
 
 
 
