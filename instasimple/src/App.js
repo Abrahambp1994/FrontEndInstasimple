@@ -9,8 +9,9 @@ import { UserProfile } from './pages/UserProfile';
 import { FilterResults } from './pages/FilterResults';
 import {NotFound} from "./pages/NotFound"
 import { ControlPanel } from './components/ControlPanel';
-
 function App() {
+
+  
   return (
     <div className="App">
       <Header />

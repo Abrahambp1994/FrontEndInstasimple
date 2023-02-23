@@ -1,13 +1,6 @@
+import { LikeButton } from "./LikeButton";
 
-import { ReactComponent as dislike } from '../assets/svg/dislike.svg';
-import { ReactComponent as islike } from '../assets/svg/islike.svg';
-export const Post = ({ post }) => {
-  
-  const [liked, setLiked] = useState(false);
-
-  const handleLikeClick = () => {
-    setLiked(!liked);
-  };
+export const Post = ({ post}) => {
   
   return (
     <article className="post">
@@ -19,9 +12,7 @@ export const Post = ({ post }) => {
         />
       ) : null} 
       <p>{post.description}</p>
-      <button onClick={handleLikeClick}>
-      {liked ? dislike : islike}
-    </button>
+      <LikeButton />
       <p>{post.creationDate}</p>
      
     </article>

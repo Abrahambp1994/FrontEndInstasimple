@@ -8,7 +8,7 @@ export const LoginOrRegister = () => {
   
     return user ? (
       <section>
-        Logged in as <Link to={`/user/${user.id}`}>{user.email}</Link>{" "}
+        Welcome to home <Link to={user.id}>{user.name}</Link>{" "}
         <button onClick={() => logout()}>Logout</button>
       </section>
     ) : (
@@ -19,6 +19,7 @@ export const LoginOrRegister = () => {
         <li>
           <Link to={"/login"}>Login</Link>
         </li>
+       
       </ul>
     );
   };

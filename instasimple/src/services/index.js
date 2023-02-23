@@ -11,7 +11,7 @@ export const getAllPostsService = async () => {
   };
 
   export const getMyDataService = async (token) => {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND}/users`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND}/user`, {
       headers: {
         Authorization: token,
       },
@@ -61,19 +61,21 @@ export const getAllPostsService = async () => {
     return json.data;
   };
 
-  export const postLikeOrDislike = async (token) => {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND}/posts/:id/like`, {
+  export const postLikeOrDislike = async (token, postId, userId) => {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND}/posts/${postId}/like`, {
       method: "POST",
       headers: {
         Authorization: token,
       },
+      body: JSON.stringify({ postId, userId }),
     });
   
     const json = await response.json();
-  
+  console.log(json);
     if (!response.ok) {
       throw new Error(json.message);
     }
   
     return json.data;
+
   };

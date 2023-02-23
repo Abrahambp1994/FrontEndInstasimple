@@ -7,6 +7,10 @@ export const AuthContextProviderComponent = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState(null);
 
+  const login = (token) => {
+    setToken(token);
+  };
+
   useEffect(() => {
     localStorage.setItem("token", token);
   }, [token]);
@@ -31,9 +35,7 @@ export const AuthContextProviderComponent = ({ children }) => {
     setUser(null);
   };
 
-  const login = (token) => {
-    setToken(token);
-  };
+  
 
   return (
     <AuthContext.Provider value={{ token, user, login, logout }}>

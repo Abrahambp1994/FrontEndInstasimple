@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { registerUserService } from "../services";
 import { useNavigate } from "react-router-dom";
+import { LinkToLogin } from "../components/LinkToLogin";
 
 export const RegisterUser = () => {
   const navigate = useNavigate();
@@ -76,6 +77,9 @@ export const RegisterUser = () => {
         <button>Register</button>
         {error ? <p>{error}</p> : null}
       </form>
+      <LinkToLogin/> 
     </section>
+   
+   
   );
 };

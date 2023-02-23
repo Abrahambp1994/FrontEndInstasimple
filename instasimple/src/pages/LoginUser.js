@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { logInUserService } from "../services/index";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { LinkToRegister } from "../components/LinkToRegister";
 
 export const LoginUser = () => {
   const navigate = useNavigate();
@@ -15,9 +16,10 @@ export const LoginUser = () => {
     e.preventDefault();
 
     try {
-      const token = await logInUserService({ email, password });
-
+      const data = await logInUserService({ email, password });
+      const token = `Bearer ${data}`;
       login(token);
+      console.log(data);
       navigate("/");
     } catch (error) {
       setError(error.message);
@@ -53,6 +55,7 @@ export const LoginUser = () => {
         <button>Login</button>
         {error ? <p>{error}</p> : null}
       </form>
+      <LinkToRegister/>
     </section>
   );
 };
