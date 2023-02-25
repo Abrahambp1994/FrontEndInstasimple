@@ -1,6 +1,10 @@
-import {Link} from "react-router-dom"
+import { NewPost } from "./NewPost"
+import { Link, NavLink } from "react-router-dom";
+import { useModal } from '../context/ModalContext';
 
 export const ControlPanel = () => {
+  const [, setModal] = useModal();
+
     return (    
         <>  
       <nav>
@@ -12,6 +16,9 @@ export const ControlPanel = () => {
     <nav>
     <Link to={"/users/:id"}>UserProfile</Link>
   </nav>
+  <div className='button' onClick={() => setModal(<NewPost/>)}>
+                    <NavLink>Add Post</NavLink>
+                </div>
   </>
     )
 }

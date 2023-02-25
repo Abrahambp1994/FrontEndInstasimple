@@ -3,15 +3,17 @@ import { UnLike } from "../assets/svg/UnLike";
 import { IsLike } from "../assets/svg/IsLike"
 import { postLikeOrDislike } from "../services/index";
 
-export const LikeButton = ({postId}) => {
+
+export const LikeButton = ({postId, token}) => {
     
   const [liked, setLiked] = useState(false);
 
 
   const handleLikeClick = () => {
+    
     setLiked(!liked);
 
-    postLikeOrDislike({postId})
+    postLikeOrDislike({postId, token})
   };
 
   return (

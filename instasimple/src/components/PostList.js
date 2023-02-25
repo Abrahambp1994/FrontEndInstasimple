@@ -6,8 +6,8 @@ export const PostList = ({ posts }) => {
     <ul>
       {posts.map((post) => {
         return (
-          <li key={post.id}>
-            <Post post={post}  />
+          <li >
+            <Post post={post} key={post.id} />
           </li>
         );
       })}

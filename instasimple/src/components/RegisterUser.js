@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { registerUserService } from "../services";
-import { useNavigate } from "react-router-dom";
-import { LinkToLogin } from "../components/LinkToLogin";
+import { NavLink, useNavigate } from "react-router-dom";
+import { LoginUser } from "./LoginUser";
+import { useModal } from "../context/ModalContext";
 
 export const RegisterUser = () => {
   const navigate = useNavigate();
@@ -11,7 +12,8 @@ export const RegisterUser = () => {
   const [pass1, setPass1] = useState("");
   const [pass2, setPass2] = useState("");
   const [error, setError] = useState("");
-
+  const [,setModal] = useModal();
+  
   const handleForm = async (e) => {
     e.preventDefault();
     if (pass1 !== pass2) {
@@ -21,15 +23,15 @@ export const RegisterUser = () => {
 
     try {
       await registerUserService({ name, email, password: pass1 });
-      navigate("/login");
+      navigate(setModal(<LoginUser/>));
     } catch (error) {
       setError(error.message);
     }
   };
   return (
-    <section>
+    <section className= "sectionForm">
       <h1>Register</h1>
-      <form onSubmit={handleForm}>
+      <form calssName= "register"onSubmit={handleForm}>
       <fieldset>
           <label htmlFor="name">Username: </label>
           <input
@@ -74,10 +76,12 @@ export const RegisterUser = () => {
             onChange={(e) => setPass2(e.target.value)}
           />
         </fieldset>
-        <button>Register</button>
+        <button >Register</button>
         {error ? <p>{error}</p> : null}
       </form>
-      <LinkToLogin/> 
+      <div className='button' onClick={() => setModal(<LoginUser/>)}>
+                    <p><NavLink>do you have an account? Log in</NavLink></p>
+                </div>
     </section>
    
    

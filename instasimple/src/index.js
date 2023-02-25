@@ -5,13 +5,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AuthContextProviderComponent } from "./context/AuthContext";
+import { ModalProvider } from './context/ModalContext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthContextProviderComponent>
    <BrowserRouter>
+   <ModalProvider>
     <App />
+    </ModalProvider>
     </BrowserRouter>
     </AuthContextProviderComponent>
   </React.StrictMode>
