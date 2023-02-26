@@ -31,17 +31,15 @@ export const NewPost = ({ addPost }) => {
   };
   return (
     <section className= "sectionForm">
-      <h1>Add new Post</h1>
-      <form className="new-tweet" onSubmit={handleForm}>
-        <fieldset>
-          <label htmlFor="text">Text</label>
-          <input type="text" name="text" id="text" required />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="image">Image</label>
+      <h1>Add new post</h1>
+      <form className="new-post" onSubmit={handleForm}>
+
+          <input type="text" placeholder="Description" name="text" id="text" required />
+          
           <input
             type="file"
             name="image"
+            placeholder="Image"
             id="image"
             accept={"image/*"}
             onChange={(e) => setImage(e.target.files[0])}
@@ -55,7 +53,7 @@ export const NewPost = ({ addPost }) => {
               />
             </figure>
           ) : null}
-        </fieldset>
+
         <button>Add post</button>
         {error ? <p>{error}</p> : null}
       </form>

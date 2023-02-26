@@ -1,6 +1,6 @@
 import {LoginOrRegister} from "./LoginOrRegister"
 import {Link} from "react-router-dom"
-
+import DarkTheme from "./DarkTheme"
 export const Header = () => {
     return (
         <header>
@@ -10,6 +10,9 @@ export const Header = () => {
       <nav>
         <LoginOrRegister />
       </nav>
+      {/* <nav>
+        <DarkTheme/>
+      </nav> */}
     </header>
     )
 }

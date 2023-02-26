@@ -31,55 +31,52 @@ export const RegisterUser = () => {
   return (
     <section className= "sectionForm">
       <h1>Register</h1>
-      <form calssName= "register"onSubmit={handleForm}>
-      <fieldset>
-          <label htmlFor="name">Username: </label>
+      <form className= "register" onSubmit={handleForm}>
+
           <input
             type="text"
             id="username"
+            placeholder="Username"
             name="username"
             value={name}
             required
             onChange={(e) => setName(e.target.value)}
           />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="email">Email: </label>
+
           <input
             type="email"
             id="email"
+            placeholder="Email"
             name="email"
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
           />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="pass1">Password: </label>
+
           <input
             type="password"
             id="pass1"
+            placeholder="Password"
             name="pass1"
             value={pass1}
             required
             onChange={(e) => setPass1(e.target.value)}
           />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="pass2">Repeat password: </label>
+
           <input
             type="password"
             id="pass2"
+            placeholder="Repeat password"
             name="pass2"
             value={pass2}
             required
             onChange={(e) => setPass2(e.target.value)}
           />
-        </fieldset>
+
         <button >Register</button>
         {error ? <p>{error}</p> : null}
       </form>
-      <div className='button' onClick={() => setModal(<LoginUser/>)}>
+      <div className='second-button' onClick={() => setModal(<LoginUser/>)}>
                     <p><NavLink>do you have an account? Log in</NavLink></p>
                 </div>
     </section>

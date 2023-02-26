@@ -11,11 +11,10 @@ import { useModal } from './context/ModalContext';
 
 function App() {
   const [modal] = useModal();
-
   
   return (
     <div className="App">
-      <Header />
+      <Header/>
       <Routes>
         <Route path="/" element={<PublicFeed />} />
         <Route path="/users/:id" element={<UserProfile />} />

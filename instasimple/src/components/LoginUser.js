@@ -30,35 +30,35 @@ export const LoginUser = () => {
   };
   return (
     <section className= "sectionForm">
-      <h1>Login</h1>
+      <h1>Log in</h1>
       <form className="login" onSubmit={handleForm}>
-        <fieldset>
-          <label htmlFor="email">Email</label>
+        
           <input
             type="email"
+            placeholder="Email"
             name="email"
             id="email"
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
           />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="pass">Password</label>
+        
+        
           <input
             type="password"
             name="pass"
+            placeholder="Password"
             id="pass"
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
           />
-        </fieldset>
+        
 
-        <button>Login</button>
+        <button>Log in</button>
         {error ? <p>{error}</p> : null}
       </form>
-      <div className='button' onClick={() => setModal(<RegisterUser/>)}>
+      <div className='second-button' onClick={() => setModal(<RegisterUser/>)}>
                     <p><NavLink>Create account</NavLink></p>
                 </div>
     </section>

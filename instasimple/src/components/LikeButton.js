@@ -17,7 +17,7 @@ export const LikeButton = ({postId, token}) => {
   };
 
   return (
-    <button onClick={handleLikeClick} >
+    <button onClick={handleLikeClick} className="buttonLike">
       {liked ? <div><IsLike witdh= {24} height={24}/></div> : <div><UnLike witdh= {24} height={24}/></div>}
     </button>
     
