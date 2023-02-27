@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { UnLike } from "../assets/svg/UnLike";
-import { IsLike } from "../assets/svg/IsLike"
+import { UnLikeSvg } from "../assets/svg/UnLikeSvg";
+import {IsLikeSvg} from "../assets/svg/IsLikeSvg"
 import { postLikeOrDislike } from "../services/index";
 
 
@@ -17,9 +17,9 @@ export const LikeButton = ({postId, token}) => {
   };
 
   return (
-    <button onClick={handleLikeClick} className="buttonLike">
-      {liked ? <div><IsLike witdh= {24} height={24}/></div> : <div><UnLike witdh= {24} height={24}/></div>}
-    </button>
+    <div onClick={handleLikeClick} className="buttonLike">
+      {liked ? <div><IsLikeSvg /></div> : <div><UnLikeSvg /></div>}
+    </div>
     
   );
 }

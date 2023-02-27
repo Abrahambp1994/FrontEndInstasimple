@@ -20,7 +20,7 @@ div.modalBg {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,4 +89,26 @@ form > button {
     padding: 0.3rem;
 }
 
+.islike {
+  width: 30px;
+  height: 30px;
+}
+.unlike {
+  width: 30px;
+  height: 30px;
+}
 
+.home {
+  width: 30px;
+  height: 30px;
+}
+
+.profile {
+  width: 30px;
+  height: 30px;
+}
+
+.addpost {
+  width: 30px;
+  height: 30px;
+}
