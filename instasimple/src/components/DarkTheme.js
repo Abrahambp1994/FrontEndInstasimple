@@ -1,17 +1,16 @@
-/* import React, { useContext } from 'react';
-import ReactSwitch from 'react-switch';
-import {ThemeContext} from '../context/ThemeContext';
+import { useState } from "react";
 
-const DarkTheme = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+export const DarkTheme = () => {
 
-  return (
-    <>
-    <label>{theme === "light" ? "🌞" : "🌚" }</label>
-    <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}/>
-  </>);
-};
+  const [isDarkMode, setIsDarkMode] = useState(false)
 
-export default DarkTheme;
- */
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
+  return(
+<div className={isDarkMode ? 'dark-mode' : ''}>
+      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+    </div>
+  )
+}

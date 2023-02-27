@@ -12,7 +12,7 @@
 
 }
 
-
+/*MODALES*/
 
 div.modalBg {
   position: fixed;
@@ -32,6 +32,7 @@ div.modalBg > div {
   border-radius: 5px;
 }
 
+/*FORMULARIO*/
 
 form.login,
 form.register,
@@ -89,6 +90,8 @@ form > button {
     padding: 0.3rem;
 }
 
+/* ESTILO DE SVG */
+
 .islike {
   width: 30px;
   height: 30px;
@@ -111,4 +114,64 @@ form > button {
 .addpost {
   width: 30px;
   height: 30px;
+}
+
+/*BOTON DE MODO OSCURO*/
+
+.dark-mode{
+  background-color: #1c1c1e;
+  color: #fcfcfc;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+}
+.light-mode{
+  background-color: #fcfcfc;
+  color: #1c1c1e;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+.switcher {
+  display: inline-block;
+  position: absolute;
+  width: 60px;
+  height: 34px;
+  top:0;
+  margin-left: -13rem;
+
+}
+
+.switcher input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #414141;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
 }
