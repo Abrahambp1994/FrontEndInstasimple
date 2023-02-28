@@ -93,27 +93,53 @@ form > button {
 /* ESTILO DE SVG */
 
 .islike {
-  width: 30px;
-  height: 30px;
+  width: 33px;
+  height: 33px;
+  fill:red;
+  fill-rule: evenodd;
+  stroke-width: 2px;
+  cursor: pointer;
+
 }
 .unlike {
-  width: 30px;
-  height: 30px;
+  width: 33px;
+  height: 33px;
+  fill:#fcfcfc;
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: 5px;
+  cursor: pointer;
+
 }
 
 .home {
   width: 30px;
   height: 30px;
+  fill:#fcfcfc;
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: 2px;
+
 }
 
 .profile {
   width: 30px;
   height: 30px;
+  fill:#fcfcfc;
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: 2px;
+
 }
 
 .addpost {
   width: 30px;
   height: 30px;
+  fill:#fcfcfc;
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: 2px;
+
 }
 
 /*BOTON DE MODO OSCURO*/
