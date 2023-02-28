@@ -1,27 +1,20 @@
-import './FilterResults.css';
+import "./FilterResults.css";
 
-import { useState } from 'react';
+import { useState } from "react";
+import usePosts from "../../hooks/usePosts";
 
 import { PostList } from "../../components/PostList/PostList";
 import { FilterPostsForm } from "../../components/FilterPostsForm/FilterPostsForm";
 
-import usePosts from "../../hooks/usePosts";
-
 export const FilterResults = () => {
-
-    const [ searchResults , setSearchResults ] = useState([]);
-    const { posts } = usePosts(searchResults);
-
-    return(
-     <section className='filter-results'>
-      
-        <div className='filter-results-header'>
-          <h2>Search</h2>
-          <FilterPostsForm setSearchResults={setSearchResults} />
-        </div>
-
-        <PostList /* searchResults={searchResults} */ posts={posts} />
-
-     </section> 
-   )
-}
+  const [searchResults, setSearchResults] = useState([]);
+  const { posts, setPosts } = usePosts(searchResults);
+  return (
+    <section className="filter-results">
+      <div className="filter-results-header">
+        <FilterPostsForm setSearchResults={setSearchResults} />
+      </div>
+      <PostList posts={posts} setPosts={setPosts} />
+    </section>
+  );
+};

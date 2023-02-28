@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals'; // ¿Para qué sirve esto?
 import { AuthContextProviderComponent } from "./context/AuthContext";
+import { ModalProvider } from './context/ModalContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +18,11 @@ root.render(
 
     <BrowserRouter> {/* Constructor para enrrutamiento de las pages */}
 
-      <App /> {/* Nuestra aplicación */}
+      <ModalProvider>
+
+        <App /> {/* Nuestra aplicación */}
+
+      </ModalProvider>
 
     </BrowserRouter>
 

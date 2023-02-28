@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
-import { getAllPostsService, getPostsByDescriptionService } from "../services/index";
+import { getAllService, postLikeDislikeService } from "../services/index";
 
 const usePosts = (searchResults) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const loadPosts = async () => {
-      
-        const data = searchResults
-        ? await getPostsByDescriptionService(searchResults)
-        : await getAllPostsService();
-
-        setPosts(data);
-    }
-
+      const data = await getAllService(searchResults);
+      setPosts(data);
+    };
     loadPosts();
   }, [searchResults]);
 
+  const addPost = (data) => {
+    setPosts([data, ...posts]);
+  };
 
+  const likePost = async (likeLike) => {
+    return await postLikeDislikeService(likeLike);
+  };
 
-  return { posts };
+  return { posts, setPosts, addPost, likePost };
 };
 
 export default usePosts;
